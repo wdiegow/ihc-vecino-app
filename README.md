@@ -16,4 +16,4 @@ La comunicación en los condominios a través de grupos de WhatsApp comunitarios
 Los avisos de llegada de visitas o deliveries se pierden rápidamente entre mensajes informales o quejas vecinales. Esto provoca que el personal de portería tenga que realizar llamadas molestas al residente para reconfirmar el ingreso, o que los visitantes se queden esperando en la calle debido a la pérdida de información, especialmente durante los cambios de turno de los guardias.
 
 ## Uso de Inteligencia Artificial
- El proyecto será desarrollado con el uso de herramientas de Inteligencia Artificial.
+ El proyecto será desarrollado SIN el uso de herramientas de Inteligencia Artificial.
