@@ -28,7 +28,7 @@ class PantallaInicio extends StatelessWidget {
             const Text('2 visitas esperadas', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
             const SizedBox(height: 32),
 
-
+            // BOTON NUEVA AUTORIZACION FLUJO-V0.1
             SizedBox(width: double.infinity, child: OutlinedButton(
               onPressed: () {
                 Navigator.push(context,
@@ -42,7 +42,7 @@ class PantallaInicio extends StatelessWidget {
 
 
             const SizedBox(height: 40), Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-
+              // NUEVO FLUJO - FLUJO-V0.2
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -55,7 +55,7 @@ class PantallaInicio extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
-                  // Aquí luego navegaremos a "Perfil"
+                  // Sin uso todavia :)
                 },
                 child: const Text('Perfil', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
               ),

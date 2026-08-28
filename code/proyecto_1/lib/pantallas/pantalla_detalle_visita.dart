@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+// datos que esta pantalla recibe de la pantalla anterior
 class PantallaDetalleVisita extends StatelessWidget {
   final String tipo;
   final String nombre;
   final String fechaHora;
   final String estado;
 
+  //pasa los datos anteriores a esta pantalla
   const PantallaDetalleVisita({
     super.key,
     required this.tipo,
@@ -44,7 +46,7 @@ class PantallaDetalleVisita extends StatelessWidget {
               Text(estado == 'Ingresó' ? 'INGRESÓ' : estado.toUpperCase(), style: TextStyle(fontFamily: 'monospace', fontSize: 18, fontWeight: FontWeight.bold, color: esPendiente ? Colors.orange : Colors.green,),),
               const SizedBox(height: 60),
 
-              // El botón "Cancelar" solo aparece si la visita está Pendiente
+              // El boton Cancelar solo aparece si la visita esta Pendiente
               if (esPendiente)
                 SizedBox(width: double.infinity, child: OutlinedButton(
                   onPressed: () {

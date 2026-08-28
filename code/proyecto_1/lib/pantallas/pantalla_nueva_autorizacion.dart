@@ -11,19 +11,12 @@ class PantallaNuevaAutorizacion extends StatefulWidget {
 
 class _PantallaNuevaAutorizacionState
     extends State<PantallaNuevaAutorizacion> {
+  // aqui se guarda lo que se escribe en pantalla
   final TextEditingController _nombreController = TextEditingController();
   final TextEditingController _fechaController = TextEditingController();
   final TextEditingController _horaController = TextEditingController();
 
-  String _tipoSeleccionado = 'Visita';
-
-  @override
-  void dispose() {
-    _nombreController.dispose();
-    _fechaController.dispose();
-    _horaController.dispose();
-    super.dispose();
-  }
+  String _tipoSeleccionado = 'Visita'; //tipo se inicializa en visita
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +35,7 @@ class _PantallaNuevaAutorizacionState
                 const SizedBox(height: 8),
 
 
+                // escoger el tipo
                 DropdownButtonFormField<String>(value: _tipoSeleccionado, decoration: const InputDecoration(border: OutlineInputBorder(), contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),),
                   items: const [
                     DropdownMenuItem(value: 'Visita', child: Text('Visita')),
@@ -64,6 +58,7 @@ class _PantallaNuevaAutorizacionState
                 const SizedBox(height: 8),
 
 
+                // pa escoger fecha
                 TextField(controller: _fechaController, readOnly: true, decoration: const InputDecoration(border: OutlineInputBorder(), hintText: 'DD/MM/AAAA', suffixIcon: Icon(Icons.calendar_today),),
                   onTap: () async {final DateTime? fechaElegida = await showDatePicker(context: context,
                     initialDate: DateTime.now(),
@@ -88,6 +83,7 @@ class _PantallaNuevaAutorizacionState
                 const SizedBox(height: 8),
 
 
+                // pa escoger hora
                 TextField(controller: _horaController, readOnly: true, decoration: const InputDecoration(border: OutlineInputBorder(), hintText: 'HH:MM', suffixIcon: Icon(Icons.access_time),),
                   onTap: () async {
                     final TimeOfDay? horaElegida = await showTimePicker(context: context, initialTime: TimeOfDay.now(),);
@@ -104,16 +100,18 @@ class _PantallaNuevaAutorizacionState
                 const SizedBox(height: 40),
 
 
+                // boton confirmar autorizacion
                 Center(child: SizedBox(width: double.infinity, child: OutlinedButton(
                   onPressed: () {
 
+                    // guarda los datos en la lista
                     VisitasStore.agregarVisita(
                       tipo: _tipoSeleccionado,
                       nombre: _nombreController.text,
                       fecha: _fechaController.text,
                       hora: _horaController.text,
                     );
-
+                    // le pasa los datos a la nueva pantalla
                     Navigator.push(context,
                       MaterialPageRoute(builder: (context) => PantallaConfirmacionAutorizacion(
                         tipo: _tipoSeleccionado,

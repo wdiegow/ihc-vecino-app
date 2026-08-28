@@ -1,6 +1,7 @@
 class VisitasStore {
   VisitasStore._();
 
+  // guardar datos en lista
   static final List<Map<String, String>> visitas = [
     {
       'tipo': 'Delivery',
@@ -16,6 +17,7 @@ class VisitasStore {
     },
   ];
 
+  // agrega una nueva visita
   static void agregarVisita({
     required String tipo,
     required String nombre,
