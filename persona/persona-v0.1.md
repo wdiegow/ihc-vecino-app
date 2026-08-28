@@ -21,7 +21,7 @@ Inicio (Dashboard) -> Mis Visitas -> Nueva Autorización -> Generar Pase (QR / N
 * **Mi Perfil:** Datos del residente y número de casa.
 
 ---
-
+# 1er FLUJO
 # Flujo v0.1
 
 ## Una tarea, un flujo principal
@@ -29,3 +29,13 @@ Inicio (Dashboard) -> Mis Visitas -> Nueva Autorización -> Generar Pase (QR / N
 **Flujo de pasos:**
 
 Abrir la aplicación -> Elegir "Nueva Autorización" -> Ingresar datos de la visita -> Enviar autorización -> Ver confirmación
+
+# 2do FLUJO
+# Flujo v0.2
+
+## Una tarea, un flujo principal
+
+**Flujo de pasos:**
+
+Abrir la app -> Tocar "Mis visitas" -> Ver lista de autorizaciones -> 
+Tocar una autorización -> Ver detalle completo -> Volver a la lista
