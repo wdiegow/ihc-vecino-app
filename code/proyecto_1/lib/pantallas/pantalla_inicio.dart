@@ -9,7 +9,7 @@ class PantallaInicio extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: Colors.white,
       body: SafeArea(child: Padding(padding: const EdgeInsets.all(16.0),
-        child: Container(width: double.infinity, padding: const EdgeInsets.all(24), decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 3), borderRadius: BorderRadius.circular(4),),
+        child: Container(width: double.infinity, padding: const EdgeInsets.all(24),
 
 
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -18,7 +18,7 @@ class PantallaInicio extends StatelessWidget {
             const SizedBox(height: 32),
 
             const Text('Hola, Mateo', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 16,),),
-            const SizedBox(height: 4),
+            const SizedBox(height: 8),
 
 
             const Text('Casa #24', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 16,),),
@@ -28,21 +28,21 @@ class PantallaInicio extends StatelessWidget {
             const Text('2 visitas esperadas', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
             const SizedBox(height: 32),
 
-            // BOTON NUEVA AUTORIZACION FLUJO-V0.1
+
             SizedBox(width: double.infinity, child: OutlinedButton(
               onPressed: () {
                 Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const PantallaNuevaAutorizacion(),),
                 );
               },
-              style: OutlinedButton.styleFrom(side: const BorderSide(color: Colors.black), padding: const EdgeInsets.symmetric(vertical: 14),),
-              child: const Text('+ Nueva autorización', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
+              child: const Text('+ Nueva autorización', style: TextStyle(color: Colors.white, fontFamily: 'monospace', fontSize: 14,),),
             ),
             ),
 
 
             const SizedBox(height: 40), Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              // NUEVO FLUJO - FLUJO-V0.2
+
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -55,7 +55,7 @@ class PantallaInicio extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
-                  // Sin uso todavia :)
+                  // Aquí luego navegaremos a "Perfil"
                 },
                 child: const Text('Perfil', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
               ),
