@@ -10,16 +10,13 @@ class PantallaMisVisitas extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Mis Visitas'),), backgroundColor: Colors.white,
       body: SafeArea(
-        child: Padding(padding: const EdgeInsets.all(16.0), child: Container(width: double.infinity, padding: const EdgeInsets.all(16), decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 3), borderRadius: BorderRadius.circular(4),),
+        child: Padding(padding: const EdgeInsets.all(16.0), child: Container(width: double.infinity, padding: const EdgeInsets.all(16),
 
-          //Creador visual para ver la lista de visitas
           child: ListView.separated(itemCount: VisitasStore.visitas.length, separatorBuilder: (context, index) => const Divider(color: Colors.black, thickness: 2,),
 
-            // recorre la lista y saca los datos que va mostrar
             itemBuilder: (context, index) {
               final visita = VisitasStore.visitas[index];
 
-              // tap a la pantalla pa ir a detalles visita
               return GestureDetector(
                 onTap: () {
                   Navigator.push(context,
@@ -34,18 +31,18 @@ class PantallaMisVisitas extends StatelessWidget {
                 },
 
 
-                child: Padding(padding: const EdgeInsets.symmetric(vertical: 12),
+                child: Padding(padding: const EdgeInsets.symmetric(vertical: 16),
 
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start,
 
                     children: [
 
                       Text(visita['tipo']!.toUpperCase(), style: const TextStyle(fontFamily: 'monospace', fontSize: 14, fontWeight: FontWeight.bold,),),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 8),
 
 
                       Text(visita['nombre']!, style: const TextStyle(fontFamily: 'monospace', fontSize: 16,),),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 8),
 
 
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
