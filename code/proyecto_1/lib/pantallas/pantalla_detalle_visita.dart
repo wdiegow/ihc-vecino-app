@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import '../data/visitas_store.dart';
+import 'pantalla_confirmacion_cancelacion.dart';
 
 class PantallaDetalleVisita extends StatelessWidget {
+  final int index;
   final String tipo;
   final String nombre;
   final String fechaHora;
@@ -8,6 +11,7 @@ class PantallaDetalleVisita extends StatelessWidget {
 
   const PantallaDetalleVisita({
     super.key,
+    required this.index,
     required this.tipo,
     required this.nombre,
     required this.fechaHora,
@@ -28,35 +32,31 @@ class PantallaDetalleVisita extends StatelessWidget {
               Text(tipo.toUpperCase(), textAlign: TextAlign.center, style: const TextStyle(fontFamily: 'monospace', fontSize: 22, fontWeight: FontWeight.bold,),),
               const SizedBox(height: 32),
 
-
               Text(nombre, textAlign: TextAlign.center, style: const TextStyle(fontFamily: 'monospace', fontSize: 18,),),
               const SizedBox(height: 8),
-
 
               Text(fechaHora, textAlign: TextAlign.center, style: const TextStyle(fontFamily: 'monospace', fontSize: 18,),),
               const SizedBox(height: 24),
 
-
               const Text('Estado:', style: TextStyle(fontFamily: 'monospace', fontSize: 14,),),
               const SizedBox(height: 8),
 
-
-              Text(estado == 'Ingresó' ? 'INGRESÓ' : estado.toUpperCase(), style: TextStyle(fontFamily: 'monospace', fontSize: 18, fontWeight: FontWeight.bold, color: esPendiente ? Colors.orange : Colors.green,),),
+              Text(estado == 'Ingresó' ? 'INGRESÓ' : estado.toUpperCase(),
+                style: TextStyle(fontFamily: 'monospace', fontSize: 18, fontWeight: FontWeight.bold, color: esPendiente ? Colors.orange : estado == 'Cancelado' ? Colors.red : Colors.green,),),
               const SizedBox(height: 64),
 
-              // El botón "Cancelar" solo aparece si la visita está Pendiente
+              // BOTON CANCELAR, SOLO SI ES "PENDIENTE"
               if (esPendiente)
                 SizedBox(width: double.infinity, child: OutlinedButton(
                   onPressed: () {
-                    //
-                    // SIN USO XD
-                    //
+                    VisitasStore.cancelarVisita(index);
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PantallaConfirmacionCancelacion(),),);
                   },
+
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
                   child: const Text('Cancelar autorización', style: TextStyle(color: Colors.white, fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
                 ),
                 ),
-
 
             ],
           ),
