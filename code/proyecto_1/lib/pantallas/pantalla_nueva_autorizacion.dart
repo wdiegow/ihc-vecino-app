@@ -22,14 +22,6 @@ class _PantallaNuevaAutorizacionState
   String? _horaError;
 
   @override
-  void dispose() {
-    _nombreController.dispose();
-    _fechaController.dispose();
-    _horaController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(title: const Text('Atrás'),), backgroundColor: Colors.white,
@@ -46,7 +38,7 @@ class _PantallaNuevaAutorizacionState
                 const Text('Tipo', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
-
+                //DESPLEGABLE TIPO
                 DropdownButtonFormField<String>(value: _tipoSeleccionado, decoration: const InputDecoration(border: OutlineInputBorder(), contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),),
                   items: const [
                     DropdownMenuItem(value: 'Visita', child: Text('Visita')),
@@ -60,7 +52,7 @@ class _PantallaNuevaAutorizacionState
                 const Text('Nombre', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
-
+                //TEXTFIELD NOMBRE
                 TextField(controller: _nombreController, decoration: InputDecoration(border: const OutlineInputBorder(), hintText: 'Nombre completo', errorText: _nombreError,),),
                 const SizedBox(height: 24),
 
@@ -68,7 +60,7 @@ class _PantallaNuevaAutorizacionState
                 const Text('Fecha', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
-
+                //ELEGIR FECHA
                 TextField(controller: _fechaController, readOnly: true, decoration: InputDecoration(border: const OutlineInputBorder(), hintText: 'DD/MM/AAAA', suffixIcon: const Icon(Icons.calendar_today), errorText: _fechaError,),
                   onTap: () async {final DateTime? fechaElegida = await showDatePicker(context: context,
                     initialDate: DateTime.now(),
@@ -92,7 +84,7 @@ class _PantallaNuevaAutorizacionState
                 const Text('Hora aprox', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
-
+                //ELEGIR HORA
                 TextField(controller: _horaController, readOnly: true, decoration: InputDecoration(border: const OutlineInputBorder(), hintText: 'HH:MM', suffixIcon: const Icon(Icons.access_time), errorText: _horaError,),
                   onTap: () async {
                     final TimeOfDay? horaElegida = await showTimePicker(context: context, initialTime: TimeOfDay.now(),);
@@ -108,35 +100,26 @@ class _PantallaNuevaAutorizacionState
                 ),
                 const SizedBox(height: 40),
 
-
+                //BOTON AUTORIZAR INGRESO
                 Center(child: SizedBox(width: double.infinity, child: ElevatedButton(
                   onPressed: () {
 
+                    //RESTRICCION CAMPOS VACIOS
                     setState(() {
                       _nombreError = _nombreController.text.isEmpty ? 'Debe introducir un nombre' : null;
                       _fechaError = _fechaController.text.isEmpty ? 'Debe elegir una fecha' : null;
                       _horaError = _horaController.text.isEmpty ? 'Debe elegir una hora' : null;
                     });
 
+                    //CORTA EL BOTON SI ESTA VACIO
                     if (_nombreError != null || _fechaError != null || _horaError != null) {
                       return;
                     }
 
-                    VisitasStore.agregarVisita(
-                      tipo: _tipoSeleccionado,
-                      nombre: _nombreController.text,
-                      fecha: _fechaController.text,
-                      hora: _horaController.text,
-                    );
+                    VisitasStore.agregarVisita(tipo: _tipoSeleccionado, nombre: _nombreController.text, fecha: _fechaController.text, hora: _horaController.text,);
 
                     Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PantallaConfirmacionAutorizacion(
-                        tipo: _tipoSeleccionado,
-                        nombre: _nombreController.text,
-                        fecha: _fechaController.text,
-                        hora: _horaController.text,
-                      ),
-                      ),
+                      MaterialPageRoute(builder: (context) => PantallaConfirmacionAutorizacion(tipo: _tipoSeleccionado, nombre: _nombreController.text, fecha: _fechaController.text, hora: _horaController.text,),),
                     );
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
