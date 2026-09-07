@@ -19,15 +19,7 @@ class PantallaMisVisitas extends StatelessWidget {
 
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PantallaDetalleVisita(
-                      tipo: visita['tipo']!,
-                      nombre: visita['nombre']!,
-                      fechaHora: visita['fechaHora']!,
-                      estado: visita['estado']!,
-                    ),
-                    ),
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PantallaDetalleVisita(index: index, tipo: visita['tipo']!, nombre: visita['nombre']!, fechaHora: visita['fechaHora']!, estado: visita['estado']!,),),);
                 },
 
 
@@ -48,7 +40,8 @@ class PantallaMisVisitas extends StatelessWidget {
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(visita['fechaHora']!, style: const TextStyle(fontFamily: 'monospace', fontSize: 13, color: Colors.black54,),),
-                          Text(visita['estado']!, style: TextStyle(fontFamily: 'monospace', fontSize: 13, fontWeight: FontWeight.bold, color: visita['estado'] == 'Pendiente' ? Colors.orange : Colors.green,),),
+                          Text(visita['estado']!, style: TextStyle(fontFamily: 'monospace', fontSize: 13, fontWeight: FontWeight.bold,
+                            color: visita['estado'] == 'Pendiente' ? Colors.orange : visita['estado'] == 'Cancelado' ? Colors.red : Colors.green,),),
                         ],
                       ),
 
