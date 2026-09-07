@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'pantalla_nueva_autorizacion.dart';
 import 'pantalla_mis_visitas.dart';
+import 'pantalla_perfil.dart';
+import '../data/perfil_store.dart';
 
 class PantallaInicio extends StatelessWidget {
   const PantallaInicio({super.key});
@@ -11,24 +14,24 @@ class PantallaInicio extends StatelessWidget {
       body: SafeArea(child: Padding(padding: const EdgeInsets.all(16.0),
         child: Container(width: double.infinity, padding: const EdgeInsets.all(24),
 
-
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
 
-            const Text('CONTROL ACCESO', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 35, fontWeight: FontWeight.bold, letterSpacing: 2,),),
+            Text('CONTROL ACCESO', style: GoogleFonts.inter(color: Color(0xFF174D3A), fontSize: 35, fontWeight: FontWeight.bold, letterSpacing: 2,),),
             const SizedBox(height: 32),
 
-            const Text('Hola, Mateo', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 16,),),
+            Text('Hola, ${PerfilStore.nombre}', style: GoogleFonts.inter(color: Colors.black, fontSize: 16,),),
             const SizedBox(height: 8),
 
 
-            const Text('Casa #24', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 16,),),
+            Text(PerfilStore.casa, style: GoogleFonts.inter(color: Colors.black, fontSize: 16,),),
             const SizedBox(height: 24),
 
 
-            const Text('2 visitas esperadas', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
+            Text('2 visitas esperadas', style: GoogleFonts.inter(color: Colors.black, fontSize: 14,),),
             const SizedBox(height: 32),
 
 
+            //BOTON NUEVA AUTO
             SizedBox(width: double.infinity, child: OutlinedButton(
               onPressed: () {
                 Navigator.push(context,
@@ -36,28 +39,31 @@ class PantallaInicio extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
-              child: const Text('+ Nueva autorización', style: TextStyle(color: Colors.white, fontFamily: 'monospace', fontSize: 14,),),
+              child: Text('+ Nueva autorización', style: GoogleFonts.inter(color: Colors.white, fontSize: 14,),),
             ),
             ),
 
 
             const SizedBox(height: 40), Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
 
+              //MENU MIS VISITAS
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const PantallaMisVisitas(),),
                   );
                 },
-                child: const Text('Mis visitas', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
+                child: Text('Mis visitas', style: GoogleFonts.inter(color: Colors.black, fontSize: 14,),),
               ),
 
-
+              //MENU PERFIL
               TextButton(
                 onPressed: () {
-                  // Aquí luego navegaremos a "Perfil"
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const PantallaPerfil(),),
+                  );
                 },
-                child: const Text('Perfil', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 14,),),
+                child: Text('Perfil', style: GoogleFonts.inter(color: Colors.black, fontSize: 14,),),
               ),
             ],
 
