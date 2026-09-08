@@ -13,6 +13,8 @@ class PantallaEditarPerfil extends StatefulWidget {
 class _PantallaEditarPerfilState extends State<PantallaEditarPerfil> {
   late final TextEditingController _nombreController;
   late final TextEditingController _casaController;
+  String? _errorNombre;
+  String? _errorCasa;
 
   @override
   void initState() {
@@ -31,27 +33,44 @@ class _PantallaEditarPerfilState extends State<PantallaEditarPerfil> {
 
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                Text('EDITAR PERFIL', style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold,),),
+                Text('EDITAR PERFIL', style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 22, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 32),
 
                 Text('Nombre', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
                 //TEXTEFIELD NOMBRE
-                TextField(controller: _nombreController, decoration: const InputDecoration(border: OutlineInputBorder(),),),
+                TextField(controller: _nombreController, decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  errorText: _errorNombre,
+                  errorStyle: const TextStyle(color: Color(0xFFFF0000)),
+                  errorBorder: const OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFFF0000))),
+                  focusedErrorBorder: const OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFFF0000))),
+                ),),
                 const SizedBox(height: 24),
 
                 Text('Casa', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
                 //TEXTFIELD CASA
-                TextField(controller: _casaController, decoration: const InputDecoration(border: OutlineInputBorder(),),),
+                TextField(controller: _casaController, decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  errorText: _errorCasa,
+                  errorStyle: const TextStyle(color: Color(0xFFFF0000)),
+                  errorBorder: const OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFFF0000))),
+                  focusedErrorBorder: const OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFFF0000))),
+                ),),
                 const SizedBox(height: 40),
 
                 //BOTON GUARDAR
                 Center(
                   child: SizedBox(width: double.infinity, child: ElevatedButton(
                       onPressed: () {
+                        setState(() {
+                          _errorNombre = _nombreController.text.trim().isEmpty ? 'Debe introducir un nombre' : null;
+                          _errorCasa = _casaController.text.trim().isEmpty ? 'Debe introducir un numero de casa' : null;
+                        });
+                        if (_errorNombre != null || _errorCasa != null) return;
                         PerfilStore.actualizarPerfil(
                           nuevoNombre: _nombreController.text,
                           nuevaCasa: _casaController.text,

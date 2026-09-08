@@ -16,10 +16,10 @@ class PantallaInicio extends StatelessWidget {
 
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
 
-            Text('CONTROL ACCESO', style: GoogleFonts.inter(color: Color(0xFF174D3A), fontSize: 35, fontWeight: FontWeight.bold, letterSpacing: 2,),),
+            Text('CONTROL ACCESO', textAlign: TextAlign.center, style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 35, fontWeight: FontWeight.bold, letterSpacing: 2,),),
             const SizedBox(height: 32),
 
-            Text('Hola, ${PerfilStore.nombre}', style: GoogleFonts.inter(color: Colors.black, fontSize: 16,),),
+            Text('Hola, ${PerfilStore.nombre}', style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 16,),),
             const SizedBox(height: 8),
 
 
@@ -27,7 +27,7 @@ class PantallaInicio extends StatelessWidget {
             const SizedBox(height: 24),
 
 
-            Text('2 visitas esperadas', style: GoogleFonts.inter(color: Colors.black, fontSize: 14,),),
+            Text('2 visitas esperadas', style: GoogleFonts.inter(color: Color(0xFF4CA22C), fontSize: 14,),),
             const SizedBox(height: 32),
 
 
@@ -53,7 +53,7 @@ class PantallaInicio extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const PantallaMisVisitas(),),
                   );
                 },
-                child: Text('Mis visitas', style: GoogleFonts.inter(color: Colors.black, fontSize: 14,),),
+                child: Text('Mis visitas', style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 14,),),
               ),
 
               //MENU PERFIL
@@ -63,7 +63,7 @@ class PantallaInicio extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const PantallaPerfil(),),
                   );
                 },
-                child: Text('Perfil', style: GoogleFonts.inter(color: Colors.black, fontSize: 14,),),
+                  child: Text('Perfil', style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 14,),),
               ),
             ],
 

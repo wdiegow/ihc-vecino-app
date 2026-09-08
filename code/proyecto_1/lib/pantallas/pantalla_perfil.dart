@@ -14,19 +14,19 @@ class PantallaPerfil extends StatelessWidget {
 
             child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
 
-                Text('MI PERFIL', textAlign: TextAlign.center, style: GoogleFonts.inter(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold,),),
+                Text('MI PERFIL', textAlign: TextAlign.center, style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 24, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 40),
 
-                Text('Nombre', style: GoogleFonts.inter(fontSize: 14, color: Colors.black54,),),
+                Text('Nombre', style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 14,),),
                 const SizedBox(height: 8),
 
-                Text(PerfilStore.nombre, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold,),),
+                Text(PerfilStore.nombre, style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 18, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 24),
 
-                Text('Casa', style: GoogleFonts.inter(fontSize: 14, color: Colors.black54,),),
+                Text('Casa', style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 14,),),
                 const SizedBox(height: 8),
 
-                Text(PerfilStore.casa, style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.bold,),),
+                Text(PerfilStore.casa, style: GoogleFonts.inter(color: Color(0xFF143125), fontSize: 18, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 64),
 
                 //BOTON EDITAR PEFIL

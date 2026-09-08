@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../data/visitas_store.dart';
 import 'pantalla_confirmacion_cancelacion.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PantallaDetalleVisita extends StatelessWidget {
   final int index;
@@ -29,20 +30,20 @@ class PantallaDetalleVisita extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.center,
 
             children: [
-              Text(tipo.toUpperCase(), textAlign: TextAlign.center, style: const TextStyle(fontFamily: 'monospace', fontSize: 22, fontWeight: FontWeight.bold,),),
+              Text(tipo.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.inter( fontSize: 22, fontWeight: FontWeight.bold,),),
               const SizedBox(height: 32),
 
-              Text(nombre, textAlign: TextAlign.center, style: const TextStyle(fontFamily: 'monospace', fontSize: 18,),),
+              Text(nombre, textAlign: TextAlign.center, style: GoogleFonts.inter( fontSize: 18,),),
               const SizedBox(height: 8),
 
-              Text(fechaHora, textAlign: TextAlign.center, style: const TextStyle(fontFamily: 'monospace', fontSize: 18,),),
+              Text(fechaHora, textAlign: TextAlign.center, style: GoogleFonts.inter( fontSize: 18,),),
               const SizedBox(height: 24),
 
-              const Text('Estado:', style: TextStyle(fontFamily: 'monospace', fontSize: 14,),),
+              Text('Estado:', style: GoogleFonts.inter( fontSize: 14,),),
               const SizedBox(height: 8),
 
               Text(estado == 'Ingresó' ? 'INGRESÓ' : estado.toUpperCase(),
-                style: TextStyle(fontFamily: 'monospace', fontSize: 18, fontWeight: FontWeight.bold, color: esPendiente ? Colors.orange : estado == 'Cancelado' ? Colors.red : Colors.green,),),
+                style: GoogleFonts.inter( fontSize: 18, fontWeight: FontWeight.bold, color: esPendiente ? Color(0xFFF7AE12) : estado == 'Cancelado' ? Colors.red : Color(0xFF37CD00),),),
               const SizedBox(height: 64),
 
               // BOTON CANCELAR, SOLO SI ES "PENDIENTE"
@@ -53,8 +54,8 @@ class PantallaDetalleVisita extends StatelessWidget {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PantallaConfirmacionCancelacion(),),);
                   },
 
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
-                  child: const Text('Cancelar autorización', style: TextStyle(color: Colors.white, fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
+                  style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFFF3B30), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
+                  child: Text('Cancelar autorización', style: GoogleFonts.inter(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold,),),
                 ),
                 ),
 

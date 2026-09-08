@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pantalla_inicio.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PantallaConfirmacionAutorizacion extends StatelessWidget {
   final String tipo;
@@ -26,7 +27,7 @@ class PantallaConfirmacionAutorizacion extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
 
             // Título
-            const Text('AUTORIZACION REGISTRADA', textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 24, fontWeight: FontWeight.bold,),),
+            Text('AUTORIZACION REGISTRADA', textAlign: TextAlign.center, style: GoogleFonts.inter(color: Colors.black,  fontSize: 24, fontWeight: FontWeight.bold,),),
             const SizedBox(height: 40),
 
             // Código QR
@@ -34,15 +35,15 @@ class PantallaConfirmacionAutorizacion extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Tipo (Visita / Delivery)
-            Text(tipo.toUpperCase(), textAlign: TextAlign.center, style: const TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 20, fontWeight: FontWeight.bold,),),
+            Text(tipo.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.inter(color: Colors.black,  fontSize: 20, fontWeight: FontWeight.bold,),),
             const SizedBox(height: 32),
 
             // Nombre
-            Text(nombre, textAlign: TextAlign.center, style: const TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 18, fontWeight: FontWeight.bold,),),
+            Text(nombre, textAlign: TextAlign.center, style: GoogleFonts.inter(color: Colors.black,  fontSize: 18, fontWeight: FontWeight.bold,),),
             const SizedBox(height: 8),
 
             // Fecha y hora juntas
-            Text('$fecha - $hora', textAlign: TextAlign.center, style: const TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 18, fontWeight: FontWeight.bold,),),
+            Text('$fecha - $hora', textAlign: TextAlign.center, style: GoogleFonts.inter(color: Colors.black,  fontSize: 18, fontWeight: FontWeight.bold,),),
             const SizedBox(height: 64),
 
             // Botón Volver al Inicio
@@ -53,7 +54,7 @@ class PantallaConfirmacionAutorizacion extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
-              child: const Text('Volver al Inicio', style: TextStyle(color: Colors.white, fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
+              child: Text('Volver al Inicio', style: GoogleFonts.inter(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold,),),
             ),
             ),
           ],

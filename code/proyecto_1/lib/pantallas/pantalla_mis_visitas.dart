@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pantalla_detalle_visita.dart';
 import '../data/visitas_store.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PantallaMisVisitas extends StatelessWidget {
   const PantallaMisVisitas({super.key});
@@ -29,19 +30,19 @@ class PantallaMisVisitas extends StatelessWidget {
 
                     children: [
 
-                      Text(visita['tipo']!.toUpperCase(), style: const TextStyle(fontFamily: 'monospace', fontSize: 14, fontWeight: FontWeight.bold,),),
+                      Text(visita['tipo']!.toUpperCase(), style: GoogleFonts.inter( color: Color(0xFF174D3A),fontSize: 14, fontWeight: FontWeight.bold,),),
                       const SizedBox(height: 8),
 
 
-                      Text(visita['nombre']!, style: const TextStyle(fontFamily: 'monospace', fontSize: 16,),),
+                      Text(visita['nombre']!, style: GoogleFonts.inter( fontSize: 16,),),
                       const SizedBox(height: 8),
 
 
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(visita['fechaHora']!, style: const TextStyle(fontFamily: 'monospace', fontSize: 13, color: Colors.black54,),),
-                          Text(visita['estado']!, style: TextStyle(fontFamily: 'monospace', fontSize: 13, fontWeight: FontWeight.bold,
-                            color: visita['estado'] == 'Pendiente' ? Colors.orange : visita['estado'] == 'Cancelado' ? Colors.red : Colors.green,),),
+                          Text(visita['fechaHora']!, style: GoogleFonts.inter( fontSize: 13, color: Colors.black54,),),
+                          Text(visita['estado']!, style: GoogleFonts.inter( fontSize: 13, fontWeight: FontWeight.bold,
+                            color: visita['estado'] == 'Pendiente' ? Color(0xFFF7AE12) : visita['estado'] == 'Cancelado' ? Color(0xFFFB0004) : Color(0xFF37CD00),),),
                         ],
                       ),
 

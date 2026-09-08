@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pantalla_confirmacion_autorizacion.dart';
 import '../data/visitas_store.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PantallaNuevaAutorizacion extends StatefulWidget {
   const PantallaNuevaAutorizacion({super.key});
@@ -32,10 +33,10 @@ class _PantallaNuevaAutorizacionState
 
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('NUEVA AUTORIZACION', style: TextStyle(color: Colors.black, fontFamily: 'monospace', fontSize: 22, fontWeight: FontWeight.bold,),),
+                Text('NUEVA AUTORIZACION', style:  GoogleFonts.inter(color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 32),
 
-                const Text('Tipo', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
+                Text('Tipo', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
                 //DESPLEGABLE TIPO
@@ -49,7 +50,7 @@ class _PantallaNuevaAutorizacionState
                 const SizedBox(height: 24),
 
 
-                const Text('Nombre', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
+                Text('Nombre', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
                 //TEXTFIELD NOMBRE
@@ -57,7 +58,7 @@ class _PantallaNuevaAutorizacionState
                 const SizedBox(height: 24),
 
 
-                const Text('Fecha', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
+                Text('Fecha', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
                 //ELEGIR FECHA
@@ -81,7 +82,7 @@ class _PantallaNuevaAutorizacionState
                 const SizedBox(height: 24),
 
 
-                const Text('Hora aprox', style: TextStyle(fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
+                Text('Hora aprox', style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold,),),
                 const SizedBox(height: 8),
 
                 //ELEGIR HORA
@@ -123,7 +124,7 @@ class _PantallaNuevaAutorizacionState
                     );
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
-                  child: const Text('Autorizar Ingreso', style: TextStyle(color: Colors.white, fontFamily: 'monospace', fontSize: 16, fontWeight: FontWeight.bold,),),
+                  child: Text('Autorizar Ingreso', style: GoogleFonts.inter(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold,),),
                 ),
                 ),
                 ),
