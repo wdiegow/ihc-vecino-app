@@ -39,3 +39,13 @@ Abrir la aplicación -> Elegir "Nueva Autorización" -> Ingresar datos de la vis
 
 Abrir la app -> Tocar "Mis visitas" -> Ver lista de autorizaciones -> 
 Tocar una autorización -> Ver detalle completo -> Volver a la lista
+
+# 3er FLUJO
+# Flujo v0.3
+
+## Una tarea, un flujo principal
+
+**Flujo de pasos:**
+
+Abrir la app -> Tocar "Perfil" -> Ver datos del residente -> 
+Tocar "Editar Perfil" -> Modificar nombre/casa -> Guardar cambios -> Volver a Perfil actualizado
