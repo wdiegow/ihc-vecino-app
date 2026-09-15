@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pantalla_inicio.dart';
+import 'pantalla_control_acceso.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -50,7 +50,7 @@ class PantallaConfirmacionAutorizacion extends StatelessWidget {
             SizedBox(width: double.infinity, child: OutlinedButton(
               onPressed: () {
                 Navigator.pushAndRemoveUntil(context,
-                  MaterialPageRoute(builder: (context) => const PantallaInicio(),), (route) => false,
+                  MaterialPageRoute(builder: (context) => const PantallaControlAcceso(),), (route) => route.isFirst,
                 );
               },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
