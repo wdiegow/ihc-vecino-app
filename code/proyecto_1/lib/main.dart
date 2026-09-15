@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pantallas/pantalla_inicio.dart';
+import 'package:prueba2/pantallas/pantalla_principal.dart';
+import 'pantallas/pantalla_control_acceso.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Control Acceso',
+      title: 'Pantalla Principal',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
       ),
-      home: const PantallaInicio(),
+      home: const PantallaPrincipal(),
     );
   }
 }
