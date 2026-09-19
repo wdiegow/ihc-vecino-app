@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:prueba2/pantallas/pantalla_principal.dart';
-import 'pantallas/pantalla_control_acceso.dart';
+import 'package:prueba2/pantallas/principal/pantalla_principal.dart';
+import 'pantallas/control_acceso/pantalla_control_acceso.dart';
 
 void main() {
   runApp(const MyApp());
