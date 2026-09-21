@@ -18,7 +18,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: Colors.grey.shade50,
       body: SafeArea(child: Padding(padding: const EdgeInsets.all(16.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
 
           children: [
             const SizedBox(height: 16),
