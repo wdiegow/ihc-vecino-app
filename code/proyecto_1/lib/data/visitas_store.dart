@@ -16,6 +16,10 @@ class VisitasStore {
     },
   ];
 
+  // Cantidad de visitas actualmente en estado "Pendiente"
+  static int get visitasPendientes =>
+      visitas.where((v) => v['estado'] == 'Pendiente').length;
+
   static void agregarVisita({
     required String tipo,
     required String nombre,
