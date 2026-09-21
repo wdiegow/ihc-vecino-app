@@ -54,7 +54,7 @@ class PantallaConfirmacionAutorizacion extends StatelessWidget {
                 },
 
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
-              child: Text('Volver al Inicio', style: GoogleFonts.inter(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold,),),
+              child: Text('Volver a Control Acceso', style: GoogleFonts.inter(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold,),),
               ),
             ),
           ],
