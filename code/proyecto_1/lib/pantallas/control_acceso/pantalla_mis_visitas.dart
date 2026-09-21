@@ -3,9 +3,14 @@ import 'pantalla_detalle_visita.dart';
 import '../../data/visitas_store.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PantallaMisVisitas extends StatelessWidget {
+class PantallaMisVisitas extends StatefulWidget {
   const PantallaMisVisitas({super.key});
 
+  @override
+  State<PantallaMisVisitas> createState() => _PantallaMisVisitasState();
+}
+
+class _PantallaMisVisitasState extends State<PantallaMisVisitas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +24,9 @@ class PantallaMisVisitas extends StatelessWidget {
               final visita = VisitasStore.visitas[index];
 
               return GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => PantallaDetalleVisita(index: index, tipo: visita['tipo']!, nombre: visita['nombre']!, fechaHora: visita['fechaHora']!, estado: visita['estado']!,),),);
+                onTap: () async {
+                  await Navigator.push(context, MaterialPageRoute(builder: (context) => PantallaDetalleVisita(index: index, tipo: visita['tipo']!, nombre: visita['nombre']!, fechaHora: visita['fechaHora']!, estado: visita['estado']!,),),);
+                  setState(() {});
                 },
 
 
@@ -55,7 +61,7 @@ class PantallaMisVisitas extends StatelessWidget {
             },
           ),
         ),
-        ),
+      ),
       ),
     );
   }
