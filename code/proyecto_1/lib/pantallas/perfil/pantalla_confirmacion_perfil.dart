@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../data/perfil_store.dart';
-import 'pantalla_perfil.dart';
 
 class PantallaConfirmacionPerfil extends StatelessWidget {
   const PantallaConfirmacionPerfil({super.key});
@@ -36,7 +35,7 @@ class PantallaConfirmacionPerfil extends StatelessWidget {
               SizedBox(
                 width: double.infinity, child: OutlinedButton(
                   onPressed: () {
-                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const PantallaPerfil(),), (route) => route.isFirst,);
+                    Navigator.pop(context);
                   },
 
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
