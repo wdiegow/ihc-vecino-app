@@ -27,7 +27,7 @@ class PantallaConfirmacionCancelacion extends StatelessWidget {
             SizedBox(
               width: double.infinity, child: OutlinedButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const PantallaMisVisitas(),), (route) => route.isFirst,);
+                  Navigator.pop(context);
                 },
 
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade700, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),), padding: const EdgeInsets.symmetric(vertical: 16),),
