@@ -49,10 +49,6 @@ class _PantallaEditarPerfilState extends State<PantallaEditarPerfil> {
                   CircleAvatar(radius: 40, backgroundColor: Colors.green.shade700,
                     child: Text(PerfilStore.nombre.isNotEmpty ? PerfilStore.nombre[0].toUpperCase() : '?',
                       style: GoogleFonts.inter(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold,),),),
-
-                  Positioned(bottom: 0, right: 0,
-                    child: Container(padding: const EdgeInsets.all(4), decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle, border: Border.all(color: Colors.green.shade700, width: 2,),),
-                      child: Icon(Icons.edit, size: 14, color: Colors.green.shade700,),),),
                 ],
               ),
             ),
