@@ -27,4 +27,28 @@ class ReservasStore {
       'hora': hora,
     });
   }
+
+  // Revisa si ya existe una reserva para esa área/fecha dentro de un rango de 2 horas
+  static bool horarioOcupado({
+    required String area,
+    required String fecha,
+    required String hora,
+  }) {
+    final int horaSolicitada = int.parse(hora.split(':')[0]);
+
+    for (final reserva in reservas) {
+      final bool mismaArea = reserva['area'] == area;
+      final bool mismaFecha = reserva['fecha'] == fecha;
+
+      if (mismaArea && mismaFecha) {
+        final int horaExistente = int.parse(reserva['hora']!.split(':')[0]);
+        final int diferencia = (horaSolicitada - horaExistente).abs();
+
+        if (diferencia < 2) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 }
