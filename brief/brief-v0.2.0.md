@@ -12,7 +12,7 @@
 - Una pantalla para que el residente registre los datos de su visita o delivery, y una vista para que el guardia vea la lista de "autorizados de hoy" y pueda marcar que ya ingresaron.
 
 ## Fuera de Alcance 
-- Sistema de pago de expensas mensuales, y reservas de áreas comunes (canchas o churrasqueras).
+- Atención al cliente o generar reportes de problemas. Contactar administrador de condominios o urbanizaciones.
 
 ## Preguntas Abiertas 
 - ¿Qué dato específico necesita obligatoriamente el guardia para dejar entrar a alguien rápido (Carnet de identidad, nombre completo, placa del vehículo)?
